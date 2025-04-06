@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swedish Place Name Heatmap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <style>
+        body { margin: 0; padding: 0; font-family: sans-serif; }
+        #map { height: 600px; width: 100%; }
+        .controls { padding: 10px; background: #f0f0f0; border-bottom: 1px solid #ccc; }
+        /* Add this to your <style> block or CSS file */
+html, body {
+    height: 100%; /* Make sure html and body cover the full viewport */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for the body */
+    flex-direction: column; /* Stack children vertically */
+    font-family: sans-serif; /* Keep your font style */
+}
+
+.controls {
+    padding: 10px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    flex-shrink: 0; /* Prevent controls from shrinking */
+}
+
+#map {
+    /* height: 600px; REMOVE or comment out the fixed height */
+    width: 100%;
+    flex-grow: 1; /* Allow the map to grow and fill remaining space */
+}
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <label for="endingInput">Name Ending:</label>
+    <input type="text" id="endingInput" placeholder="e.g., vik, stad, torp">
+    <button id="updateMapBtn">Show Heatmap</button>
+    <span id="placeCount"></span>
+</div>
+<div id="map"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
